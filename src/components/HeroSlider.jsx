@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
 const heroImages = [
-    '/hero_3.png',
-    '/hero_1.png',
-    '/hero_2.png',
+    '/hero_3.webp',
+    '/hero_1.webp',
+    '/hero_2.webp',
 ];
 
 export default function HeroSlider() {
     const [currentIndex, setCurrentIndex] = useState(0);
+
+    // Preload images for smoother transition
+    useEffect(() => {
+        heroImages.forEach((src) => {
+            const img = new Image();
+            img.src = src;
+        });
+    }, []);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -28,6 +36,7 @@ export default function HeroSlider() {
                     <img
                         src={image}
                         alt={`Hero ${index + 1}`}
+                        loading="eager"
                         className={`w-full h-full object-cover transition-transform duration-[7000ms] ease-linear ${index === currentIndex ? 'scale-110' : 'scale-100'
                             }`}
                     />
@@ -58,3 +67,4 @@ export default function HeroSlider() {
         </div>
     );
 }
+
