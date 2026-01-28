@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Sidebar from './components/Sidebar';
 import ProductCard from './components/ProductCard';
+import HeroSlider from './components/HeroSlider';
 import { products } from './data/products';
 
 function App() {
@@ -58,17 +59,8 @@ function App() {
       <Header />
 
       {/* Breadcrumbs / Page Title */}
-      {/* Breadcrumbs / Page Title */}
-      <div className="bg-white py-20 mb-12">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-serif font-medium text-gray-900 mb-6 tracking-tight">Eau De Toilette</h1>
-          <p className="text-gray-400 text-xs uppercase tracking-[0.2em] font-medium">
-            <span className="hover:text-brand-red cursor-pointer transition-colors">Home</span>
-            <span className="mx-3 text-gray-300">/</span>
-            <span>EDT</span>
-          </p>
-        </div>
-      </div>
+      {/* Hero Slider */}
+      <HeroSlider />
 
       <main className="container mx-auto px-4 flex-grow">
         <div className="flex flex-col lg:flex-row gap-8">
