@@ -67,48 +67,53 @@ export default function Sidebar({ filters, setFilters }) {
                 </div>
 
                 <FilterSection title="Availability" isOpenDefault={true}>
-                    <label className="flex items-center gap-3 cursor-pointer hover:text-brand-red">
+                    <label className="flex items-center gap-3 cursor-pointer group hover:text-brand-red transaction-colors">
                         <input
                             type="checkbox"
                             checked={filters.inStock}
                             onChange={handleStockChange}
-                            className="w-4 h-4 rounded border-gray-300 text-brand-red focus:ring-brand-red"
+                            className="w-4 h-4 rounded-full border-gray-300 text-brand-red focus:ring-brand-red transition-all"
                         />
-                        <span className="text-gray-600 text-sm">In stock</span>
+                        <span className="text-gray-500 text-sm group-hover:text-brand-red transition-colors">In stock</span>
                     </label>
                 </FilterSection>
 
                 <FilterSection title="Price">
-                    <div className="flex items-center gap-2 text-sm text-gray-600">
-                        <span>From</span>
-                        <input
-                            type="number"
-                            value={filters.minPrice}
-                            onChange={(e) => handlePriceChange(e, 'minPrice')}
-                            className="w-20 p-1 border rounded"
-                            placeholder="Rs."
-                        />
-                        <span>To</span>
-                        <input
-                            type="number"
-                            value={filters.maxPrice}
-                            onChange={(e) => handlePriceChange(e, 'maxPrice')}
-                            className="w-20 p-1 border rounded"
-                            placeholder="Rs."
-                        />
+                    <div className="flex items-center gap-4 text-sm text-gray-600">
+                        <div className="relative flex-1">
+                            <span className="absolute left-0 bottom-2 text-gray-400">Rs.</span>
+                            <input
+                                type="number"
+                                value={filters.minPrice}
+                                onChange={(e) => handlePriceChange(e, 'minPrice')}
+                                className="w-full pl-6 py-1 border-b border-gray-200 focus:border-brand-red outline-none text-gray-900 placeholder-gray-300 transition-colors bg-transparent"
+                                placeholder="0"
+                            />
+                        </div>
+                        <span className="text-gray-300">-</span>
+                        <div className="relative flex-1">
+                            <span className="absolute left-0 bottom-2 text-gray-400">Rs.</span>
+                            <input
+                                type="number"
+                                value={filters.maxPrice}
+                                onChange={(e) => handlePriceChange(e, 'maxPrice')}
+                                className="w-full pl-6 py-1 border-b border-gray-200 focus:border-brand-red outline-none text-gray-900 placeholder-gray-300 transition-colors bg-transparent"
+                                placeholder="Max"
+                            />
+                        </div>
                     </div>
                 </FilterSection>
 
                 <FilterSection title="Product type" isOpenDefault={true}>
                     {['EDT', 'Perfume oils', 'Gift Sets', 'DP'].map(type => (
-                        <label key={type} className="flex items-center gap-3 cursor-pointer hover:text-brand-red">
+                        <label key={type} className="flex items-center gap-3 cursor-pointer group hover:text-brand-red transition-colors">
                             <input
                                 type="checkbox"
                                 checked={filters.types.includes(type)}
                                 onChange={() => handleTypeChange(type)}
-                                className="w-4 h-4 rounded border-gray-300 text-brand-red focus:ring-brand-red"
+                                className="w-4 h-4 rounded-full border-gray-300 text-brand-red focus:ring-brand-red transition-all"
                             />
-                            <span className="text-gray-600 text-sm">{type}</span>
+                            <span className="text-gray-500 text-sm group-hover:text-brand-red transition-colors">{type}</span>
                         </label>
                     ))}
                 </FilterSection>

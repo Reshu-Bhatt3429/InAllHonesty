@@ -5,3 +5,29 @@
   --color-brand-dark: #8a050a;
   --font-sans: "Mukta Vaani", sans-serif;
 }
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    background-color: var(--color-brand-red);
+    color: white;
+  }
+
+  body {
+    @apply antialiased text-gray-900 bg-white;
+  }
+}
+
+@layer utilities {
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}

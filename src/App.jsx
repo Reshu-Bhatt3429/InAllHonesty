@@ -58,11 +58,14 @@ function App() {
       <Header />
 
       {/* Breadcrumbs / Page Title */}
-      <div className="bg-gray-50 py-12 mb-12">
+      {/* Breadcrumbs / Page Title */}
+      <div className="bg-white py-20 mb-12">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl font-serif font-medium text-gray-900 mb-4">Eau De Toilette</h1>
-          <p className="text-gray-500 text-sm uppercase tracking-widest">
-            <span className="hover:text-brand-red cursor-pointer">Home</span> / <span>EDT</span>
+          <h1 className="text-5xl md:text-6xl font-serif font-medium text-gray-900 mb-6 tracking-tight">Eau De Toilette</h1>
+          <p className="text-gray-400 text-xs uppercase tracking-[0.2em] font-medium">
+            <span className="hover:text-brand-red cursor-pointer transition-colors">Home</span>
+            <span className="mx-3 text-gray-300">/</span>
+            <span>EDT</span>
           </p>
         </div>
       </div>
