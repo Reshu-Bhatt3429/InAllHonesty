@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-red: #B3060D;
+  --color-brand-dark: #8a050a;
+  --font-sans: "Mukta Vaani", sans-serif;
+}
